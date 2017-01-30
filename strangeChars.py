@@ -19,3 +19,4 @@ for item in mess:
 for item in items:
     if items[item] == 1:
         print item
+        
