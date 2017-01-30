@@ -1,14 +1,17 @@
+#Andela homestudy isogram challenge solution
+
 def is_isogram(word):
-    if not isinstance(word, basestring):
+    if not word:
       raise TypeError("Argument should be a string")
-    elif len(word) < 1 or word == "":
+    
+    if not len(word) > 1:
         return (word, False)
-    else:
-      for cha in word:
-          if word.count(cha) > 1:
-              return (word, False)
-          else:
-            return (word, True)
+
+    for cha in word:
+        if word.count(cha) > 1:
+            return (word, False)
+        else:
+          return (word, True)
     return (word, True)
 
-print is_isogram('11')
+print is_isogram('Sample Isogram Word')
