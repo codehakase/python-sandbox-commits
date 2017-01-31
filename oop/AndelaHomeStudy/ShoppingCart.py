@@ -25,7 +25,7 @@ class ShoppingCart(object):
             price = int(price)
 
         if item_name in self.items:
-            if  not quantity <= self.items[item_name]:
+            if  quantity >= self.items[item_name]:
                  self.items.pop(item_name, None)
             else:
                 self.items[item_name] -= quantity
@@ -56,8 +56,8 @@ class Shop(ShoppingCart):
 
 cart = ShoppingCart()
 
-cart.add_item('Mango', 20, 200)
+cart.add_item('Mango,', 20, 200)
 print cart.total
 print cart.items
-print cart.remove_item('Mangoo', 10, 200)
+print cart.remove_item('Mango', 10, 200)
 print cart.total
