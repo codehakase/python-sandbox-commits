@@ -8,21 +8,21 @@ class ShoppingCart(object):
         if not isinstance(item_name, basestring):
             return False
         elif not isinstance(quantity, int):
-            quantity = 0
+            quantity = int(quantity)
         elif not isinstance(price, int):
-            price = 0
+            price = int(price)
+
         cost = quantity * price
         self.total += cost
         self.items[item_name] = quantity
-        return True
 
     def remove_item(self, item_name, quantity, price):
         if not isinstance(item_name, basestring):
             return False
         elif not isinstance(quantity, int):
-            quantity = 0
+            quantity = int(quantity)
         elif not isinstance(price, int):
-            price = 0
+            price = int(price)
 
         if item_name in self.items:
             if  not quantity <= self.items[item_name]:
@@ -31,6 +31,7 @@ class ShoppingCart(object):
                 self.items[item_name] -= quantity
                 cost = quantity * price
                 self.total -= cost
+            return True
 
     def checkout(self, cash_paid):
         if not isinstance(cash_paid, int):
@@ -55,6 +56,8 @@ class Shop(ShoppingCart):
 
 cart = ShoppingCart()
 
-cart.add_item('Mango', '20', 100)
+cart.add_item('Mango', 20, 200)
 print cart.total
 print cart.items
+print cart.remove_item('Mangoo', 10, 200)
+print cart.total
