@@ -28,6 +28,7 @@ class ShoppingCart(object):
                     self.items[item_name] -= quantity
                 cost = quantity * price
                 self.total -= cost
+                
             else:
                 pass
         else:
