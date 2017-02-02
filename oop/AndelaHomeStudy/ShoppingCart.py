@@ -55,7 +55,6 @@ class Shop(ShoppingCart):
             self.quantity -= 1
 
 cart = ShoppingCart()
-
 cart.add_item('Mango,', 20, 200)
 print cart.total
 print cart.items

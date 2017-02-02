@@ -1,7 +1,9 @@
-def fibR(n):
-    if n == 1 or n == 2:
-        return 1
-    return fibR(n-1) + fibR(n-2)
+def fibonacci(n):
+    a = b = 1
+    for i in range(1, n+1):
+        c = a + b
+        print b
+        a = b
+        b = c
 
-print fibR(502)
-
+print (fibonacci(10))
