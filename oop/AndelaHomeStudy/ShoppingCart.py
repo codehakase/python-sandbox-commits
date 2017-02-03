@@ -3,6 +3,7 @@ class ShoppingCart(object):
     def __init__(self):
         self.total = 0
         self.items = {}
+        
 
     def add_item(self, item_name, quantity, price):
         if not isinstance(item_name, basestring):
